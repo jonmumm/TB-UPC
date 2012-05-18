@@ -46,3 +46,11 @@ gem "thin", :group => :production
 gem "sqlite3", :group => [:development, :test]
 gem "nifty-generators", :group => :development
 gem "rails-backbone"
+
+gem "mocha", :group => :test
+gem "coffee-filter"
+
+gem "zxing"
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+gem "formtastic", "~> 2.1.1"

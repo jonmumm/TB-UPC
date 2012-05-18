@@ -1,0 +1,18 @@
+= javascript "https://staging.tokbox.com/v0.91/js/TB.min.js"
+
+%button#capture Capture
+
+:coffeescript
+  rm = TB.initRecorderManager "1127"
+  recorder = rm.displayRecorder "moderator_token"
+
+  $("#capture").click ->
+    img_data = recorder.getImgData()
+    $.ajax "/scans",
+      data:
+        img_data: img_data
+      type: "POST"
+      success: (response) ->
+        alert response.name
+      error: (response) ->
+        alert "Product not found"
