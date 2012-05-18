@@ -1,10 +1,14 @@
 = javascript "https://staging.tokbox.com/v0.91/js/TB.min.js"
 
-%button#capture Capture
+#recorder
+%div
+  %button#capture Capture
 
 :coffeescript
   rm = TB.initRecorderManager "1127"
-  recorder = rm.displayRecorder "moderator_token"
+  recorder = rm.displayRecorder "moderator_token", "recorder", 
+    style:
+      showControlBar: false
 
   $("#capture").click ->
     img_data = recorder.getImgData()
